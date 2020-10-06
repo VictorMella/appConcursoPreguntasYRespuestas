@@ -1,13 +1,13 @@
 <h4 class="card-title">{{obtenerPregunta()}}</h4>
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let item of listPregunta[preguntaService.index].respuestas">
+    <li class="list-group-item" *ngFor="let item of listPregunta[preguntaService.index].respuestas" (click)="respuestaSeleccionada(item)" [ngClass]="addClassOptions(item)">
         {{item.nombre}}
-        <!-- <span class="badge">
+        <span class="badge"  *ngIf="iconCorrect(item)">
             <i class="material-icons correct" > check_circle</i>
          </span>
-         <span class="badge">
+         <span class="badge"  *ngIf="iconIncorrect(item)">
             <i class="material-icons incorrect"> clear</i>
-         </span> -->
+         </span>
     </li>
 
 </ul>

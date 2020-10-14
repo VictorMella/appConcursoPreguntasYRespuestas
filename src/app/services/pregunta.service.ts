@@ -6,12 +6,12 @@ import { Respuesta } from '../models/respuesta';
   providedIn: 'root',
 })
 export class PreguntaService {
-  index = 0;
+  indexPregunta = 0;
   opcionSeleccionada: Respuesta;
   deshabilitarBtn = true;
   confirmada = false;
   indexRespuesta = null;
-  respuestasusuario: Array<number> = [];
+  respuestasUsuario: Array<number> = [];
 
   public preguntas: Pregunta[] = [
     new Pregunta('Cual es la capital de Chile', [
@@ -42,7 +42,7 @@ export class PreguntaService {
 
   constructor() {}
 
-  getPreguntas(){
+  getPreguntas() {
     return this.preguntas.slice()
   }
 }
